@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Service · Páginas web y paneles de ventas para emprendimientos</title>
+    <meta
+      name="description"
+      content="Hacemos la página de tu emprendimiento y un panel donde ves qué vendiste, qué te falta y cuánto ganaste. Online en una semana. Rosario, Argentina."
+    />
+    <meta property="og:title" content="Web Service · Webs que venden. Datos que deciden." />
+    <meta
+      property="og:description"
+      content="Páginas web, tiendas online y paneles con dashboards para emprendimientos y comercios."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#121735" />
+    <link rel="apple-touch-icon" href="/brand/logo-app.svg" />
+    <script>
+      try {
+        const t = localStorage.getItem('ws-theme')
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches))
+          document.documentElement.classList.add('dark')
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

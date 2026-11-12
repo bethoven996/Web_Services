@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/onest';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Onest Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #f6f7fb;
+  --color-ink: #121735;
+  --color-indigo: #4f46e5;
+  --color-indigo-soft: #7c83f0;
+  --color-cyan: #06b6d4;
+  --color-mist: #e3e6f0;
+  --color-muted: #5b6280;
+
+  --color-night: #0e1230;
+  --color-night-2: #171c40;
+  --color-night-line: #2a3060;
+  --color-moon: #e8eaf6;
+  --color-moon-muted: #a3a9cc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-paper text-ink font-sans dark:bg-night dark:text-moon;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility wrap {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[0.95rem] font-semibold transition-colors;
+}
+@utility btn-primary {
+  @apply btn bg-indigo text-white hover:bg-ink dark:hover:bg-indigo-soft;
+}
+@utility btn-ghost {
+  @apply btn border border-ink/15 text-ink hover:border-ink/40 dark:border-moon/20 dark:text-moon dark:hover:border-moon/50;
+}
+@utility panel {
+  @apply rounded-2xl border border-mist bg-white dark:border-night-line dark:bg-night-2;
+}
+@utility lead {
+  @apply text-muted dark:text-moon-muted;
+}
+@utility section-title {
+  @apply text-[2rem] font-semibold sm:text-[2.6rem];
+}
