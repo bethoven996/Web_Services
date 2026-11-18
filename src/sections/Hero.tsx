@@ -421,10 +421,10 @@ export function Hero() {
               <ArrowRight size={18} /> Pedí tu presupuesto
             </a>
             <a
-              href="#panel"
+              href="/demo/"
               className="btn-ghost !px-7 !py-3.5 !border-indigo/40 dark:!border-moon/30"
             >
-              <Play size={16} /> Ver el panel completo
+              <Play size={16} /> Acceder a la demo
             </a>
           </motion.div>
         </div>
